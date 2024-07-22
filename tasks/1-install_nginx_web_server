@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# install nginx on web-01
+
+#sudo apt update
+#sudo apt-get -y install nginx
+
+# start nginx
+sudo service nginx start
+
+#sudo sed -i 's/80/80/g' /etc/nginx/sites-enabled/default
+
+
+# First, allow connections through SSH on port 22.
+#sudo ufw allow OpenSSH
+
+# Second, allow connections through http on its port 80.
+#sudo ufw allow 'Nginx HTTP'
+
+# Enable the firewall.
+#sudo ufw enable
+
+
+sudo chmod -R 755 /var/www
+sudo chown -R "$USER:$USER" /var/www/html
+#echo "Hello World!" > /var/www/html/index.html
+
+#add custom header to config
+#sudo sed -i '/server_name _;/a\\tadd_header X-Served-By $HOSTNAME;' /etc/nginx/sites-enabled/default
+
+sudo service nginx restart

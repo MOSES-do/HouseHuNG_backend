@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# to allow inbound connections on port 3306 from specific IP addresses
+
+sudo iptables -A INPUT -p tcp --dport 3306 -s 100.25.222.39 -j ACCEPT
+sudo mkdir /etc/iptables/
+sudo touch /etc/iptables/rules.v4
+sudo iptables-save > /etc/iptables/rules.v4

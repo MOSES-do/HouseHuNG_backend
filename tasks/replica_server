@@ -1,0 +1,5 @@
+
+-- CREATE USER 'replica_user'@'%' IDENTIFIED BY 'replica_user';
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%' IDENTIFIED BY 'replica_user';
+
+FLUSH PRIVILEGES;

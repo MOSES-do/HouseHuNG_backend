@@ -1,0 +1,6 @@
+-- obtain current binary log coordinates to set replica to begin replicating data from the latest point n the log file
+FLUSH TABLES WITH READ LOCK;
+SHOW MASTER STATUS
+
+--copy File name and position number from output
+-- e.g mysql-bin.000001 position - 899
