@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Terminating SSL on HAproxy” means that HAproxy is configured to handle encrypted traffic, unencrypt it and pass it on to its destination
+
+sudo apt update
+sudo apt install certbot
+sudo certbot certonly --standalone -d www.aceme.tech
+
+# multiple hostnames ssl/tls
+#certbot certonly --manual --preferred-challenges dns -d elixir.com -d www.elixir.com
